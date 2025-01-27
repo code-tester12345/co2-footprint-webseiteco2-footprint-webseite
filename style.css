@@ -1,0 +1,112 @@
+/* style.css */
+
+/* Grundlegende Anpassungen */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Logo-Styling verbessern */
+.site-logo {             
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.site-logo img {         
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;           /* Rundes Logo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+    background-color: white;      /* Weißer Hintergrund */
+    padding: 8px;                 /* Innenabstand */
+}
+
+.site-logo:hover {       
+    transform: scale(1.05);       
+}
+
+/* Tabellenanpassungen */
+table th, table td {
+    text-align: left;
+    padding: 10px;
+}
+
+/* Sortierbare Tabellenspalten */
+.sortable {
+    cursor: pointer;
+    position: relative;
+    padding-right: 25px !important;
+}
+
+.sortable::after {
+    content: '↕️';
+    position: absolute;
+    right: 8px;
+    opacity: 0.5;
+}
+
+.sortable:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.sortable.asc::after {
+    content: '↑';
+    opacity: 1;
+}
+
+.sortable.desc::after {
+    content: '↓';
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    /* Anpassungen für kleinere Bildschirme */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 15px; /* Container für kleinere Bildschirme anpassen */
+    }
+
+}
+
+.navbar-expand-lg .navbar-nav {
+    margin-left: auto !important; /* !important um Bootstrap zu überschreiben */
+    margin-right: auto;
+}
+
+/* Container-Fluid anpassen */
+.container-fluid {
+    justify-content: flex-end;
+}
+
+/* Grundlegende Stile für die Social-Media-Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* LTR Ausrichtung */
+[dir="ltr"] .social-links {
+    justify-content: flex-start; /* Links ausrichten für LTR */
+}
+
+/* RTL Ausrichtung */
+[dir="rtl"] .social-links {
+    justify-content: flex-end; /* Rechts ausrichten für RTL */
+}
+
+.social-links a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0d6efd;
+}
